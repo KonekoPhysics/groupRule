@@ -1,0 +1,207 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+#outer {
+    font-size: 13px;
+    line-height: 150%;
+    text-align: left;
+}
+
+#header {
+    text-align: left;
+    background-color: #0B6B92;
+}
+
+#head-inner {
+    margin: 0px auto 0px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+    background-color: #0B6B92;
+    padding: 25px;
+}
+
+.description {
+    padding-left: 10px;
+    line-height: 140%;
+    color: #ffffff;
+}
+
+.contents {
+    margin: 0px auto 0px auto;
+    padding: 30px 0px 0px 0px;
+    width: 90%;
+    line-height: 150%;
+    color: #333333;
+    font-size: 18px;
+}
+
+ul {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+
+li {
+    list-style: disk;
+}
+
+P {
+    margin: 1em 0 1em 0;
+    line-height: 150%;
+}
+
+img {
+    border: 0px;
+}
+
+hr {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #cccccc;
+    height: 1px;
+}
+
+a {
+    font-weight: normal;
+}
+p {
+    text-indent: 1rem;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    padding: 30px 0px 0px 10px;
+    margin: 0px;
+    color: #ffffff;
+}
+
+h1 a {
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 0px 0px 0px 0px;
+    padding: 4px 0px 4px 7px;
+    border-bottom: 2px solid #999999;
+}
+
+
+.green {
+    color: #008800;
+    font-weight: bold;
+}
+
+#middle {
+    margin: 0px auto 0px auto;
+    padding: 10px 0px 20px 0px;
+    width: 90%;
+    font-size: 18px;
+}
+
+.side-title {
+    width: 90%;
+    padding: 4px 10px 4px 10px;
+    background-color: #f1f1f1;
+    font-weight: bold;
+    border: 1px solid #999999;
+    margin-bottom: 10px;
+}
+
+.side {
+    margin: 0px 0px 10px 0px;
+    padding: 2px 8px 8px 7px;
+    line-height: 150%;
+}
+
+ul {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+
+li {
+    list-style: disk;
+}
+
+#footer {
+    font-size: 12px;
+    height: 100px;
+    clear: left;
+    text-align: center;
+}
+
+blockquote {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px;
+}
+
+
+
+
+/*ol要素の共通設定*/  
+ol.enumi, ol.enumi ol{
+  padding-left: 1em; /*入れ子が起こるたびにインデント．0でもよいと思う*/
+}
+
+ol.enumi li{
+  list-style-type:none; /*標準の番号を消す*/
+}
+
+ol.enumi li:before{
+  display: inline-block; 
+  text-align: right; /*i), ii)などを右寄せさせるため*/
+  width: 2em;        /*リスト番号の幅*/
+  margin-right: 1em; /*リスト番号と文章の間隔*/
+  margin-left: -3em; /*上の2つと足して0になるように設定*/
+}
+
+/*カウンターの設定（olの階層ごとに設定）*/
+ol.enumi>li{
+  counter-increment: level1; /*もう少しセマンティックなネーミングはないか……*/
+}
+
+ol.enumi>li:before{
+  content: counter(level1)"."; /*大文字のローマ数字*/
+  font-weight: bold;
+}
+
+ol.enumii>li{
+  counter-increment: level2; /*同上*/
+}
+ol.enumiii>li{
+  counter-increment: level3; /*同上*/
+}
+
+
+/*特定のリスト番号を変えたい時*/
+ol.enumii>li{
+  margin-left:2em;   /*下のmargin-leftの符号違いを設定*/
+  margin-top: 0.5em;  /*リスト番号と文章の間隔*/
+  margin-bottom: 0.5em;  /*リスト番号と文章の間隔*/
+}
+ol.enumii>li:before{
+  content: "("counter(level2)")"!important; /*ここだけ!importantが必要？*/
+}
+
+/*特定のリスト番号を変えたい時*/
+ol.enumiii>li{
+  margin-left:2em;   /*下のmargin-leftの符号違いを設定*/
+  margin-top: 0.5em;  /*リスト番号と文章の間隔*/
+  margin-bottom: 0.5em;  /*リスト番号と文章の間隔*/
+}
+ol.enumiii>li:before{
+  content: counter(level3, lower-roman)"."!important; /*ここだけ!importantが必要？*/
+}
